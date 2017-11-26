@@ -77,8 +77,8 @@ export class HomePage {
         this.eventService.joinEvent(event, user);
         this.earnService.addRewardFromEvent(event);
 
-        this.alert.show('Points Earned', 'You have just earned 10 points');
-        this.toast.show(`You have joined the ${event.name} event!!`);
+        this.alert.show('Points Earned', 'You have just earned 30 points');
+        this.toast.show(`You have joined the ${event.name} event!!`)
 
       } else {
         this.eventService.leaveEvent(event);

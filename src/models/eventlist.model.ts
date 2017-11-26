@@ -3,5 +3,5 @@ export interface EventList{
    date: number,
    desc: string,
    img: string,
-   title: string
+   title: string,
 }

@@ -1,4 +1,8 @@
+
+import { RatePlayersPage } from './../pages/rate-players/rate-players';
 import { RatingComponent } from './../components/rating/rating';
+
+import { PopupService } from './../services/popup.service';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { FIREBASE_CONFIG } from './firebase.credentials';
 
@@ -8,7 +12,6 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 
-import { RatePlayersPage } from './../pages/rate-players/rate-players';
 import { EventsListPage } from './../pages/events-list/events-list';
 import { GamePage } from './../pages/game/game';
 import { HomePage } from '../pages/home/home';

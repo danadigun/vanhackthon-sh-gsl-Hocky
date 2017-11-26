@@ -4,7 +4,6 @@ import { SigninPage } from './../signin/signin';
 import { CommentsPage } from './../comments/comments';
 import { AuthService } from './../../services/auth.service';
 import { Observable } from 'rxjs/Rx';
-
 import { Component } from '@angular/core';
 import { IonicPage } from 'ionic-angular/navigation/ionic-page';
 import { NavController, ModalController } from 'ionic-angular';
@@ -26,13 +25,13 @@ export class HomePage {
   constructor(
     public navCtrl: NavController,
     public eventService: EventService,
-    public authService : AuthService,
-    public earnService : EarnService,
-    public toast : ToastService,
-    public loading : LoadingService,
-    public alert : PopupService,
+    public authService: AuthService,
+    public earnService: EarnService,
+    public toast: ToastService,
+    public loading: LoadingService,
+    public alert: PopupService,
     public modalCtrl: ModalController
-  ) {  
+  ) {
 
     this.events$ = this.eventService
       .getTodaysEvents()
@@ -66,7 +65,6 @@ export class HomePage {
       event.likes++;
     else
       event.likes--;
-
   }
 
   onCheckIn(event: Event, index) {
@@ -75,7 +73,6 @@ export class HomePage {
     let user = this.authService.getActiveUser().email;
 
     if (user) {
-
       if (event.checkedIn) {
         this.eventService.joinEvent(event, user);
         this.earnService.addRewardFromEvent(event);
@@ -90,7 +87,6 @@ export class HomePage {
       this.navCtrl.setRoot(SigninPage)
     }
   }
-
 
   leaveEvent(key) {
     this.alert.show('Key', key);

@@ -10,4 +10,4 @@ import { RewardDetailsPage } from './reward-details';
     IonicPageModule.forChild(RewardDetailsPage),
   ],
 })
-export class RewardDetailsPageModule {}
+export class RewardDetailsPageModule { }

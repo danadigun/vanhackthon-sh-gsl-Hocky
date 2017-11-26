@@ -4,7 +4,7 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-  <ion-card  *ngFor="let event of eventlist$ | async">
+  <ion-card *ngFor="let event of eventlist$ | async">
     <ion-item>
       <h2>
         {{event.title}}

@@ -11,9 +11,9 @@ import { HomePage } from '../home/home';
   selector: 'page-rate-players',
   templateUrl: 'rate-players.html',
 })
+
 export class RatePlayersPage implements OnInit {
   match: Match
-
   arrPlayers: Player[] = [];
 
   constructor(
@@ -21,31 +21,31 @@ export class RatePlayersPage implements OnInit {
     public earnService: EarnService,
     private toastService: ToastService,
     private navCtrl: NavController
-  ){}
+  ) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this.matchService.getMatch()
-    .subscribe(
+      .subscribe(
       data => {
         this.match = data
       }
-    )
+      )
   }
 
-  rate(p:Player, rate: number){
+  rate(p: Player, rate: number) {
     p.rate = rate;
     this.arrPlayers.push(p)
   }
 
-  rateMatch(rate: number){
+  rateMatch(rate: number) {
     console.log(rate);
     this.match.rate = rate;
   }
 
-  saveRatings(){
+  saveRatings() {
     this.earnService.addRewardFromRatePlayer(this.arrPlayers);
     this.earnService.addRewardFromMatch(this.match);
-    this.toastService.show("Thank You for enjoy it - You Gain Reward Point",5000);
+    this.toastService.show("Thank You for enjoy it - You Gain Reward Point", 5000);
     this.navCtrl.setRoot(HomePage);
   }
 

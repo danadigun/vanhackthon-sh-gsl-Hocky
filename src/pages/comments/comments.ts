@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { NavParams, LoadingController, Content } from 'ionic-angular';
 import { FormControl } from "@angular/forms/src/model";
 import { ViewController } from 'ionic-angular/navigation/view-controller';
+import { AuthService } from './../../services/auth.service';
 
 @Component({
   templateUrl: 'comments.html',
@@ -11,69 +12,66 @@ import { ViewController } from 'ionic-angular/navigation/view-controller';
 export class CommentsPage {
   @ViewChild(Content) content: Content;
   eventName: string;
-  comments: Array<{commenterName: string, comment: string}>;
+  comments: Array<{ commenterName: string,
+    comment: string,
+    avatar: string
+  }>;
 
   constructor(
     public params: NavParams,
     public viewCtrl: ViewController,
     public loadCtrl: LoadingController,
+    private authService: AuthService
   ) {
     this.eventName = this.params.data.name;
+
+    //load comments from event
     //this.comments = this.params.data.comments;
-    //console.log(this.comments);
-    console.log(this.params);
     this.comments = [{
-        commenterName: 'Donnovan',
-        comment: 'Nice game!'
-      },
-      {
-        commenterName: 'Joseph Joestar',
-        comment: 'This game will be awesome! Go Canada!'
-      },
-      {
-        commenterName: 'Britney',
-        comment: 'Yeeeaaahhh really excited!'
-      },
-      {
-        commenterName: 'Houston',
-        comment: 'The stadium is full? Because I forgot to buy a ticket. Please please dont be full.'
-      },
-      {
-        commenterName: 'Joseph Joestar',
-        comment: 'This game will be awesome! Go Canada!'
-      },
-      {
-        commenterName: 'Britney',
-        comment: 'Yeeeaaahhh really excited!'
-      },
-      {
-        commenterName: 'Houston',
-        comment: 'The stadium is full? Because I forgot to buy a ticket. Please please dont be full.'
-      },
-      {
-        commenterName: 'Joseph Joestar',
-        comment: 'This game will be awesome! Go Canada!'
-      },
-      {
-        commenterName: 'Britney',
-        comment: 'Yeeeaaahhh really excited!'
-      },
-      {
-        commenterName: 'Houston',
-        comment: 'The stadium is full? Because I forgot to buy a ticket. Please please dont be full.'
-      },
-      {
-        commenterName: 'Joseph Joestar',
-        comment: 'This game will be awesome! Go Canada!'
-      },
-      {
-        commenterName: 'Britney',
-        comment: 'Yeeeaaahhh really excited!'
-      },
-      {
-        commenterName: 'Houston',
-        comment: 'The stadium is full? Because I forgot to buy a ticket. Please please dont be full.'
-      }];
+      commenterName: 'Woody',
+      comment: 'Nice game!',
+      avatar: '../../assets/imgs/comments/profile-woody.jpg'
+    },
+    {
+      commenterName: 'Anakin',
+      comment: 'This game will be awesome! Go Canada!',
+      avatar: '../../assets/imgs/comments/profile-anakin.jpg'
+    },
+    {
+      commenterName: 'Legolas',
+      comment: 'Yeeeaaahhh really excited!',
+      avatar: '../../assets/imgs/comments/profile-legolas.jpg'
+    },
+    {
+      commenterName: 'Yoda',
+      comment: 'The stadium is full? Because I forgot to buy a ticket. Please please dont be full.',
+      avatar: '../../assets/imgs/comments/profile-yoda.jpg'
+    },
+    {
+      commenterName: 'Woody',
+      comment: 'This game will be awesome! Go Canada!',
+      avatar: '../../assets/imgs/comments/profile-woody.jpg'
+    },
+    {
+      commenterName: 'Anakin',
+      comment: 'Yeeeaaahhh really excited!',
+      avatar: '../../assets/imgs/comments/profile-anakin.jpg'
+    },
+    {
+      commenterName: 'Legolas',
+      comment: 'The stadium is full? Because I forgot to buy a ticket. Please please dont be full.',
+      avatar: '../../assets/imgs/comments/profile-legolas.jpg'
+    },
+    {
+      commenterName: 'Woody',
+      comment: 'This game will be awesome! Go Canada!',
+      avatar: '../../assets/imgs/comments/profile-woody.jpg'
+    },
+    {
+      commenterName: 'Anakin',
+      comment: 'Yeeeaaahhh really excited!',
+      avatar: '../../assets/imgs/comments/profile-anakin.jpg'
+    }];
   }
 
   dismiss() {
@@ -83,11 +81,13 @@ export class CommentsPage {
   sendComment(f: FormControl) {
     let load = this.handleLoading();
     load.present();
-    this.comments.push({commenterName: 'User', comment: f.value.comment});
+    this.comments.push({ 
+      commenterName: this.authService.getActiveUser().email,
+      comment: f.value.comment,
+      avatar: '../../assets/imgs/comments/profile-vanhack.jpg'
+    });
     load.dismiss();
     this.scrollToBottom();
-    console.log('todo comment service');
-    console.log(f.value.comment);
   }
 
   scrollToBottom() {

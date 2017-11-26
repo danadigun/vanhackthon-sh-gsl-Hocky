@@ -8,14 +8,8 @@ import { EarnService } from '../../services/earn.service';
 import { ToastService } from '../../services/toast.service';
 import { Event } from '../../models/event.model';
 
-/**
- * Generated class for the ConcertPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
+
 @Component({
   selector: 'page-concert',
   templateUrl: 'concert.html',
@@ -25,13 +19,13 @@ export class ConcertPage {
   eventlist$: Observable<EventList[]>;
 
   constructor(
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
     public navParams: NavParams,
-    private eventlistService : EventListService,
+    private eventlistService: EventListService,
     private EventService: EventService,
     private earnService: EarnService,
     private toast: ToastService) {
-      this.getData();
+    this.getData();
   }
 
   ionViewDidLoad() {
@@ -52,22 +46,22 @@ export class ConcertPage {
 
   join(eventList: EventList) {
     console.log('Clicked on Join ', eventList);
-    
-        let event: Event = {
-          name: eventList.title,
-          eventType : eventList.key.split('-')[0],
-          description: eventList.desc,
-          date: eventList.date,
-          imgUrl: eventList.img,        
-          comments: 15,
-          likes: 2,
-          liked: false,        
-          checkedIn:false,
-        };
-    
-        this.EventService.AddEvent(event);
-        this.earnService.addRewardFromEvent(event);
-        this.toast.show(`You have joined the ${event.name} event!!`)
+
+    let event: Event = {
+      name: eventList.title,
+      eventType: eventList.key.split('-')[0],
+      description: eventList.desc,
+      date: eventList.date,
+      imgUrl: eventList.img,
+      comments: 15,
+      likes: 2,
+      liked: false,
+      checkedIn: false,
+    };
+
+    this.EventService.AddEvent(event);
+    this.earnService.addRewardFromEvent(event);
+    this.toast.show(`You have joined the ${event.name} event!!`)
 
   }
 }

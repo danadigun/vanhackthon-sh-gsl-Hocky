@@ -9,7 +9,7 @@ export class EventListService {
     private eventlistRef = this.db.list<EventList>('event-list');
     private eventListGameRef = this.db.list<EventList>('event-list', ref => ref.orderByKey().startAt('game-'));
     private eventListConcertRef = this.db.list<EventList>('event-list', ref => ref.orderByKey().startAt('concert-'));
-    
+
     constructor(
         private db: AngularFireDatabase,
         private toast: ToastService
@@ -20,7 +20,7 @@ export class EventListService {
         return this.eventListGameRef;
     }
 
-    getConcertInfo(){
+    getConcertInfo() {
         return this.eventListConcertRef;
     }
 }

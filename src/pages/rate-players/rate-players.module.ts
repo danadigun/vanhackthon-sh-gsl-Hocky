@@ -10,4 +10,5 @@ import { RatePlayersPage } from './rate-players';
     IonicPageModule.forChild(RatePlayersPage),
   ],
 })
-export class RatePlayersPageModule {}
+
+export class RatePlayersPageModule { }

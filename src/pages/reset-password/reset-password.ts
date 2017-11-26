@@ -1,6 +1,6 @@
 import { AuthService } from './../../services/auth.service';
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController, AlertController } from 'ionic-angular';
+import { NavController, LoadingController, AlertController } from 'ionic-angular';
 import { FormControl } from "@angular/forms/src/model";
 import { ResetPasswordCodePage } from '../reset-password-code/reset-password-code';
 
@@ -12,7 +12,6 @@ export class ResetPasswordPage {
 
   constructor(
     public navCtrl: NavController,
-    public navParams: NavParams,
     public auth: AuthService,
     public loadCtrl: LoadingController,
     public alertCtrl: AlertController

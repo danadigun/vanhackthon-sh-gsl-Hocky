@@ -1,6 +1,6 @@
 import { AuthService } from './../../services/auth.service';
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController, AlertController } from 'ionic-angular';
+import { LoadingController, AlertController } from 'ionic-angular';
 import { FormControl } from "@angular/forms/src/model";
 
 @Component({
@@ -10,8 +10,6 @@ import { FormControl } from "@angular/forms/src/model";
 export class SignupPage {
 
   constructor(
-    public navCtrl: NavController,
-    public navParams: NavParams,
     public auth: AuthService,
     public loadCtrl: LoadingController,
     public alertCtrl: AlertController

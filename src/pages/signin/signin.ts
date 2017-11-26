@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { SignupPage } from './../signup/signup';
 import { ResetPasswordPage } from './../reset-password/reset-password';
 import { AuthService } from './../../services/auth.service';
-import { NavController, NavParams, LoadingController, AlertController } from 'ionic-angular';
+import { NavController, LoadingController, AlertController } from 'ionic-angular';
 import { FormControl } from "@angular/forms/src/model";
 import { HomePage } from '../home/home';
 
@@ -13,11 +13,8 @@ import { HomePage } from '../home/home';
 
 export class SigninPage {
 
-  lastSlide: boolean;
-
   constructor(
     public navCtrl: NavController,
-    public navParams: NavParams,
     public auth: AuthService,
     public loadCtrl: LoadingController,
     public alertCtrl: AlertController

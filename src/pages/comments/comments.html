@@ -15,7 +15,7 @@
   <ion-list>
     <ion-item text-wrap *ngFor="let comment of comments">
       <ion-avatar item-start>
-        <img src="http://wpmedia.ottawacitizen.com/2017/03/former-team-canada-hockey-player-cassie-campbell-pascall-ska.jpeg?quality=55&strip=all">
+        <img src="{{comment.avatar}}">
       </ion-avatar>
       <h2>{{comment.commenterName}}</h2>
       <p>{{comment.comment}}</p>

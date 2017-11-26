@@ -12,23 +12,25 @@ import { EarnService } from '../../services/earn.service';
 import { ToastService } from '../../services/toast.service';
 
 @IonicPage()
+
 @Component({
   selector: 'page-game',
   templateUrl: 'game.html',
 })
+
 export class GamePage {
   eventlist$: Observable<EventList[]>;
 
-
   constructor(
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
     public navParams: NavParams,
     public eventService : EventService,
     public alert : PopupService,
     public toast : ToastService,
     public authService : AuthService,
     public earnService : EarnService,
-    public eventlistService : EventListService) {
+    public eventlistService : EventListService
+    ) {
 
     this.getData();
 
@@ -43,35 +45,35 @@ export class GamePage {
     console.log('ionViewDidLoad GamePage');
   }
 
-  getData(){
+  getData() {
     console.log('getdata');
     this.eventlist$ = this.eventlistService
-    .getGameInfo()
-    .snapshotChanges()
-    .map(changes => {
+      .getGameInfo()
+      .snapshotChanges()
+      .map(changes => {
         return changes.map(c => ({
-                key : c.payload.key, ...c.payload.val()
+          key: c.payload.key, ...c.payload.val()
         }))
-    });
+      });
   }
-
 
   join(eventList: EventList){
     console.log('Clicked on Join ', eventList);
 
     let event: Event = {
       name: eventList.title,
-      eventType : eventList.key.split('-')[0],
+      eventType: eventList.key.split('-')[0],
       description: eventList.desc,
       date: eventList.date,
-      imgUrl: eventList.img,        
+      imgUrl: eventList.img,
       comments: 15,
       likes: 2,
-      liked: false,        
-      checkedIn:false,
+      liked: false,
+      checkedIn: false,
     };
 
-    this.eventService.AddEvent(event);
+    this.
+      .AddEvent(event);
     this.earnService.addRewardFromEvent(event);
     this.alert.show('Points Earned', 'You have just earned 30 points');
 

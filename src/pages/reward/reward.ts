@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { RewardService } from '../../services/reward.service';
 import { RewardModel } from '../../models/reward.model';
 import { RewardDetailsPage } from '../reward-details/reward-details'
@@ -10,14 +10,14 @@ import { AuthService } from '../../services/auth.service';
   selector: 'page-list',
   templateUrl: 'reward.html'
 })
+
 export class RewardPage {
-  
+
   totalPoints: number;
   point$: Observable<RewardModel[]>;
 
   constructor(
     public navCtrl: NavController,
-    public navParams: NavParams,
     public rewardService: RewardService,
     private authService: AuthService
   ) {

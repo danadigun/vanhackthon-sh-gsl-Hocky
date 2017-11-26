@@ -37,11 +37,11 @@ export class EarnService {
         players.forEach(player => {
 
             this.rewardModel.place = player.name,
-            this.rewardModel.key = this.authService.getActiveUser().email,
-            this.rewardModel.date = Date.now(),
-            this.rewardModel.point = 5,
+                this.rewardModel.key = this.authService.getActiveUser().email,
+                this.rewardModel.date = Date.now(),
+                this.rewardModel.point = 5,
 
-            console.log('Player :::' + this.rewardModel)
+                console.log('Player :::' + this.rewardModel)
             this.rewardsRef.push(this.rewardModel);
         });
 

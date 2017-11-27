@@ -36,9 +36,10 @@ so you can test the app on your mobile device.
 Just run
 
 ```
-Ionic serve 
+ionic serve 
 ```
 Open the DevApp on your device and click on the app. (Make sure your phone and your computer is on thesame wireless network)
+Or with you prefer, this same command start the aplication on your favorite browser, simulating exactly the application mobile.
 
 
 ## Authors
@@ -55,6 +56,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+* Thanks VanHack to propitiate this experience.
+* Thanks GSL Holding to create challenge.
+* Thanks all the team shadow warrior, for great experience. Zero To Hero.

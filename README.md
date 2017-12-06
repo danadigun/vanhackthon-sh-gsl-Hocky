@@ -1,4 +1,7 @@
 # vanhackthon-sh-gsl-Hocky
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ea75f7172f4a4571857db76b55c20b01)](https://www.codacy.com/app/danadigun/vanhackthon-sh-gsl-Hocky?utm_source=github.com&utm_medium=referral&utm_content=danadigun/vanhackthon-sh-gsl-Hocky&utm_campaign=badger)
+
 Vanhackathon 4.0 Challenge by Team Shadow Warriors - To Create a gaming application that can be played from people's mobile devices in arena, which allows them to interact with the hockey game in play or with the artist/group performing the concert.
 
 # Project Title

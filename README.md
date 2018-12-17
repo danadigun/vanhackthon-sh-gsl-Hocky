@@ -6,7 +6,7 @@ Vanhackathon 4.0 Team Challenge - To Create a gaming application that can be pla
 
 # Project Title
 
-Team Shadow Warriors Vanhackacthon Project for GSL Holdings
+Vanhackacthon Project for GSL Holdings
 
 ## Getting Started
 
